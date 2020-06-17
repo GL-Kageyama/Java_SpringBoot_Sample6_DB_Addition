@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  	<meta charset="UTF-8">
+	<title>Spring Boot Sample 6</title>
+</head>
+<body>
+	<!-- Title display -->
+	<h3>Customer Information Registration</h3>
+	<!-- Send customer information to the insert function. -->
+  	<form th:action="@{/insert}" th:object="${customer}" method="post">
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Telno</th>
+			</tr>
+			<!-- Customer Information Entry Field -->
+			<tr>
+				<td><input type="text" th:field="*{name}"></td>
+				<td><input type="text" th:field="*{address}"></td>
+				<td><input type="text" th:field="*{telno}"></td>
+			</tr>
+		</table>
+		<!-- Register button -->
+		<form action="/">
+			<button type="submit">Sign Up</button>
+		</form>
+	</form>
+</body>
+</html>
